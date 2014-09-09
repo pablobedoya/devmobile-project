@@ -29,8 +29,10 @@ public class MainActivity extends ActionBarActivity {
 
 		leftDrawer = (ListView) findViewById(R.id.left_drawer);
 		listItems = new String[] { "Primeiro item", "Segundo item" };
-		leftDrawer.setAdapter(new ArrayAdapter<String>(MainActivity.this,
-				R.layout.item_menu, listItems));
+		ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
+				android.R.layout.simple_list_item_1, android.R.id.text1,
+				listItems);
+		leftDrawer.setAdapter(adapter);
 
 		leftDrawer.setOnItemClickListener(new OnItemClickListener() {
 			@Override
