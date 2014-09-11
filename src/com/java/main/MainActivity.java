@@ -1,5 +1,8 @@
 package com.java.main;
 
+import java.io.InputStream;
+import java.util.List;
+
 import android.support.v4.app.ActionBarDrawerToggle;
 import android.support.v4.app.Fragment;
 import android.support.v4.app.FragmentManager;
@@ -13,7 +16,6 @@ import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
 import android.widget.AdapterView;
-import android.widget.ArrayAdapter;
 import android.widget.ListView;
 import android.widget.AdapterView.OnItemClickListener;
 
@@ -28,13 +30,23 @@ public class MainActivity extends ActionBarActivity {
 		super.onCreate(savedInstanceState);
 		setContentView(R.layout.activity_main);
 
-		leftDrawer = (ListView) findViewById(R.id.left_drawer);
-		listItems = new String[] { "Primeiro item", "Segundo item" };
-		ArrayAdapter<String> adapter = new ArrayAdapter<String>(this,
-				android.R.layout.simple_list_item_1, android.R.id.text1,
-				listItems);
-		leftDrawer.setAdapter(adapter);
+		// Create Parser for raw/states.xml
+		StateParser stateParser = new StateParser();
+		InputStream inputStream = getResources().openRawResource(
+				R.raw.states);
 
+		// Parse the inputstream
+		stateParser.parse(inputStream);
+		
+		// Get states
+		List<State> stateList = stateParser.getList();
+		
+		// Create a customized ArrayAdapter
+		StateArrayAdapter adapter = new StateArrayAdapter(
+				getApplicationContext(), R.layout.state_list_item, stateList);
+		
+		leftDrawer = (ListView) findViewById(R.id.left_drawer);
+		leftDrawer.setAdapter(adapter);
 		leftDrawer.setOnItemClickListener(new OnItemClickListener() {
 			@Override
 			public void onItemClick(AdapterView<?> container, View view,
@@ -49,11 +61,12 @@ public class MainActivity extends ActionBarActivity {
 				Fragment fragment = new PhraseFragment();
 				fragment.setArguments(args);
 
-				FragmentManager fragmentManager = getSupportFragmentManager();				
-				FragmentTransaction fragmentTransaction = fragmentManager.beginTransaction();
-			    fragmentTransaction.replace(R.id.content_frame, fragment);
-			    fragmentTransaction.addToBackStack(null);
-			    fragmentTransaction.commit(); 
+				FragmentManager fragmentManager = getSupportFragmentManager();
+				FragmentTransaction fragmentTransaction = fragmentManager
+						.beginTransaction();
+				fragmentTransaction.replace(R.id.content_frame, fragment);
+				fragmentTransaction.addToBackStack(null);
+				fragmentTransaction.commit();
 			}
 		});
 

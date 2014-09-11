@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="utf-8"?>
+<states>
+		<state name="Acre" abbreviation="AC" region="Norte" />
+		<state name="Alagoas" abbreviation="AL" region="Nordeste" />
+		<state name="Amapá" abbreviation="AP" region="Norte" />
+		<state name="Amazonas" abbreviation="AM" region="Norte" />
+		<state name="Bahia" abbreviation="BA" region="Nordeste" />
+		<state name="Ceará" abbreviation="CE" region="Nordeste" />
+		<state name="Distrito Federal" abbreviation="DF" region="Centro-Oeste" />
+		<state name="Espírito Santo" abbreviation="ES" region="Sudeste" />
+		<state name="Goiás" abbreviation="GO" region="Centro-Oeste" />
+		<state name="Maranhão" abbreviation="MA" region="Nordeste" />
+		<state name="Mato Grosso" abbreviation="MT" region="Centro-Oeste" />
+		<state name="Mato Grosso do Sul" abbreviation="MS" region="Centro-Oeste" />
+		<state name="Minas Gerais" abbreviation="MG" region="Sudeste" />
+		<state name="Pará" abbreviation="PA" region="Norte" />
+		<state name="Paraíba" abbreviation="PB" region="Nordeste" />
+		<state name="Paraná" abbreviation="PR" region="Sul" />
+		<state name="Pernambuco" abbreviation="PE" region="Nordeste" />
+		<state name="Piauí" abbreviation="PI" region="Nordeste" />
+		<state name="Rio de Janeiro" abbreviation="RJ" region="Sudeste" />
+		<state name="Rio Grande do Norte" abbreviation="RN" region="Nordeste" />
+		<state name="Rio Grande do Sul" abbreviation="RS" region="Sul" />
+		<state name="Rondônia" abbreviation="RO" region="Norte" />
+		<state name="Roraima" abbreviation="RR" region="Norte" />
+		<state name="Santa Catarina" abbreviation="SC" region="Sul" />
+		<state name="São Paulo" abbreviation="SP" region="Sudeste" />
+		<state name="Sergipe" abbreviation="SE" region="Nordeste" />
+		<state name="Tocantins" abbreviation="TO" region="Norte" />
+</states>
